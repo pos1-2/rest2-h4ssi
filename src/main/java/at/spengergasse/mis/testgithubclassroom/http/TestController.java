@@ -19,14 +19,14 @@ public class TestController {
 
     @PostMapping("/{test}")
     public ResponseEntity<Test> getTest(@PathVariable String test) {
-        return ResponseEntity.internalServerError().build();
+//        return ResponseEntity.internalServerError().build();
 
-//        val java = Test.builder().test(test).build();
-//        log.info("To be stored: {}", java);
-//        val db = testRepository.save(java);
-//        log.info("Stored: {}", db);
-//
-//        return ResponseEntity.ok().body(db);
+        val java = Test.builder().test(test).build();
+        log.info("To be stored: {}", java);
+        val db = testRepository.save(java);
+        log.info("Stored: {}", db);
+
+        return ResponseEntity.ok().body(db);
     }
 
 }
